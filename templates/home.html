@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block body %}
+<header>
+    Welcome to my TaskList
+    <a href="/"><button>All my tasks</button></a>
+    <a href="/active"><button>Active</button></a>
+    <a href="/finished"><button>Finished</button></a>
+</header>
+<h3>Try it!<a href="/add"><button>Add task</button></a></h3>
+{% block content %}
+
+{% endblock %}
+
+{% endblock %}
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Home page</title>-->
+<!--&lt;!&ndash;    <link href="">&ndash;&gt;-->
+<!--</head>-->
+<!--<body>-->
+<!--<header>-->
+<!--    Welcome to my TaskList-->
+<!--    <button><a href="home.html">All my tasks</a></button>-->
+<!--    <button>Active</button>-->
+<!--    <button>Finished</button>-->
+<!--</header>-->
+<!--<div>-->
+<!--    <h2>All my tasks:</h2>-->
+<!--    <button>Add task</button>-->
+<!--    &lt;!&ndash; Here will be button  &ndash;&gt;-->
+
+<!--</div>-->
+<!--<div>-->
+<!--    <ol>-->
+<!--        {% for task in tasks %}-->
+<!--        <li id="task">{{ task.title }} <a id="statusTask">{{ task.status.value }}</a></li>-->
+<!--        {% endfor %}-->
+<!--    </ol>-->
+
+<!--</div>-->
+<!--<footer></footer>-->
+<!--</body>-->
+<!--</html>-->

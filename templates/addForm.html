@@ -1,0 +1,22 @@
+{% extends "home.html" %}
+
+{% block title %} Add Task {% endblock %}
+
+
+{% block content %}
+
+<form method="post" action="">
+    <label>
+        <input type="text" placeholder="Title" name="title">
+    </label>
+    <button type="submit" class="add_button" onclick="location.href='/active'">Add</button>
+    <button onclick="location.href='/'" type="button" class=back_button>
+        Назад
+    </button>
+</form>
+
+{% endblock %}
+
+<!--    <label for="title">Title task: </label>-->
+<!--    <input id="title" type="text" name="title">-->
+<!--    <input type="submit" value="OK">-->

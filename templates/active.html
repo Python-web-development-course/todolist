@@ -1,0 +1,21 @@
+{% extends "home.html" %}
+
+{% block title %} Active Tasks {% endblock %}
+
+{% block content %}
+
+<h2>That is active task</h2>
+<ol>
+    {% for task in active %}
+    {% if task.status.value == "active": %}
+        <li id="task">
+            <form method="post" action="/active/{{task.title}}">
+                <label>{{ task.title }}</label>
+                <button type="submit" class="add_button" name="title">Finished</button>
+            </form>
+        </li>
+    {% endif %}
+    {% endfor %}
+</ol>
+
+{% endblock %}

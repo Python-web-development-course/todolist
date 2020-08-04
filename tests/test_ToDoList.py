@@ -5,8 +5,7 @@ from model_Task import Task, StatusTask
 
 @pytest.fixture()
 def todo_list():
-    tdl = ToDoList()
-    return tdl
+    return ToDoList()
 
 
 @pytest.fixture()
@@ -16,7 +15,6 @@ def task():
 
 def test_add_task(todo_list, task):
     todo_list.add_task(todo_list, task)
-    print(todo_list.taskList)
     assert len(todo_list.taskList) == 1
 
 

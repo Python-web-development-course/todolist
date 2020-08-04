@@ -9,7 +9,7 @@
     {% for task in active %}
     {% if task.status.value == "active": %}
         <li id="task">
-            <form method="post" action="/active/{{task.title}}">
+            <form method="post" action="/active/{{task.id}}">
                 <label>{{ task.title }}</label>
                 <button type="submit" class="add_button" name="title">Finished</button>
             </form>

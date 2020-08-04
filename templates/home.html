@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block body %}
+<header>
+    Welcome to my TaskList
+    <a href="/"><button>All my tasks</button></a>
+    <a href="/active"><button>Active</button></a>
+    <a href="/finished"><button>Finished</button></a>
+</header>
+<h3>Try it!<a href="/add"><button>Add task</button></a></h3>
+{% block content %}
+
+{% endblock %}
+
+{% endblock %}

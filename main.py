@@ -23,7 +23,7 @@ def add(title: str = Form(...)):
 
 @app.post("/active/{task_id}")
 def to_finished(task_id: int):
-    tasks.move_to_finished(tasks.get_by_id(task_id))
+    tasks.move_to_finished(tasks.get_task_by_id(task_id))
     return RedirectResponse("/active", status_code=303)
 
 

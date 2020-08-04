@@ -15,7 +15,7 @@ class Tasks:
         task.status = StatusTask.finished
         self.taskList[index].status = StatusTask.finished
 
-    def get_by_id(self, task_id):
+    def get_task_by_id(self, task_id):
         for task in self.taskList:
             if task.id == task_id:
                 return task

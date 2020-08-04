@@ -16,10 +16,11 @@ app.mount('/static', StaticFiles(directory='static'), name="static")
 templates = Jinja2Templates(directory='templates')
 
 
-@app.post("/add")
+@app.post("/add", status_code=HTTPStatus.CREATED.value)
 def add(request: Request, title: str = Form(...)):
     new_task: Task = Task(title=title, status=StatusTask.active)
     tdl.add_task(new_task)
+    # return RedirectResponse("/active")
     return templates.TemplateResponse("addForm.html", {"request": request})
 
 
@@ -27,6 +28,7 @@ def add(request: Request, title: str = Form(...)):
 def to_finished(request: Request, title: str):
     task: Task = Task(title=title, status=StatusTask.active)
     tdl.move_to_finished(task)
+    # return RedirectResponse("/active")
     return templates.TemplateResponse("active.html", {"request": request, "active": tdl.taskList})
 
 
@@ -37,7 +39,7 @@ def get_form(request: Request):
 
 @app.get("/")
 def get_all_tasks(request: Request):
-    return templates.TemplateResponse("all.html", {"request": request, "tasks": tdl.taskList})
+    return templates.TemplateResponse("index.html", {"request": request, "tasks": tdl.taskList})
 
 
 @app.get("/active")

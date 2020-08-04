@@ -11,4 +11,5 @@ class ToDoList(BaseModel):
 
     def move_to_finished(self, task: Task) -> None:
         index: int = self.taskList.index(task)
+        task.status = StatusTask.finished
         self.taskList[index].status = StatusTask.finished
